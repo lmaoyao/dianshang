@@ -15,16 +15,20 @@
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span>管理员</span>
+              <span>人员管理</span>
             </template>
             <el-menu-item-group>
               <el-menu-item index="list"> 
                 <i class="el-icon-menu"></i>
-                超级管理员
+                人员列表
               </el-menu-item>
-              <el-menu-item index="1-2">
+              <el-menu-item index="auth">
                  <i class="el-icon-menu"></i>
-                地区管理员
+                角色列表
+              </el-menu-item>
+              <el-menu-item index="authlist">
+                 <i class="el-icon-menu"></i>
+                权限列表
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -46,8 +50,8 @@
             <el-menu-item-group>
               <el-menu-item index="index">上传订单</el-menu-item>
               <el-menu-item index="query">查询订单</el-menu-item>
-              <el-menu-item index="3-3">代发货订单</el-menu-item>
-              <el-menu-item index="3-4">退款维权订单</el-menu-item>
+              <!-- <el-menu-item index="3-3">代发货订单</el-menu-item> -->
+              <!-- <el-menu-item index="3-4">退款维权订单</el-menu-item> -->
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="4">

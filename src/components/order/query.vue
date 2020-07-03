@@ -1,7 +1,7 @@
 <template>
     <div>
        
-        <Info shouye='首页' guanli="订单管理" liebiao="查询列表" >
+        <Info shouye='首页' guanli="订单管理" liebiao="查询列表" flag='true'>
              <el-input placeholder="请输入手机号或者公司名称" v-model="querys.inputPhone" style="width:300px" clearable>
                 <el-button slot="append" icon="el-icon-search" @click="getLimit"></el-button>
             </el-input>

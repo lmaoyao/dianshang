@@ -1,7 +1,14 @@
 <template>
     <div>
-        <Info shouye='首页' guanli="订单管理" liebiao="上传列表">
+        <Info shouye='首页' guanli="订单管理" liebiao="上传列表" flag='true'>
+           
         <el-row>
+            <el-alert
+            title="请按真确的xlsx格式上传数据"
+            type="warning"
+            center
+            show-icon>
+             </el-alert> 
             <el-col :span="8">
                 <el-upload
                     class="upload-demo"

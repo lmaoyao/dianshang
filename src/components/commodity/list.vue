@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Info shouye="首页" guanli='投诉管理' liebiao='订单查询'>
+      <Info shouye="首页" guanli='投诉管理' liebiao='订单查询' flag='true'>
           <el-input placeholder="请输入手机号" v-model="query.mobile" style="width:300px" clearable>
                 <el-button slot="append" icon="el-icon-search" @click="getList"></el-button>
          </el-input>

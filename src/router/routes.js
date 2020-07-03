@@ -12,27 +12,42 @@ let routes = [
     component:()=>import('@/components/home/Home'),
     children:[
       {
+        name:"人员管理",
         path:"/list",
         component:()=>import('@/components/user/list')
       },
       {
+        name:"角色管理",
+        path:"/auth",
+        component:()=>import('@/components/user/auth')
+      },
+      {
+        name:"权限列表",
+        path:"/authlist",
+        component:()=>import('@/components/user/authlist')
+      },
+      {
+        name:"上传列表",
         path:"/index",
         component:()=>import('@/components/order/index')
       },
       {
+        name:"查询列表",
         path:"/query",
         component:()=>import('@/components/order/query')
       },
       {
+        name:"统计信息",
         path:"/statistics",
         component:()=>import('@/components/statistics/index')
-
       },
       {
+        name:"上传订单",
         path:"/commodity",
         component:()=>import('@/components/commodity/index')
       },
       {
+        name:"订单查询",
         path:"/querylist",
         component:()=>import('@/components/commodity/list')
       }

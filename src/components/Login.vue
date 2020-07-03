@@ -24,6 +24,9 @@
 </template>
 <script>
 export default {
+  created(){
+   
+  },
     data(){
       return{
         from:{
@@ -53,34 +56,23 @@ export default {
           if(!islogin){
              this.$message.error('账户或者密码输入有误');
           }else{    
-            let {data:result} = await this.$http.post('login/login',this.from)  
+            let {data:result} = await this.$http.post('login/login',this.from)
+            //权限路径
+            let arr = []
+            let {data:res} = await this.$http.get('auth/pathlist',{params:{name:this.from.username}});
+            res.data.forEach(item =>{
+              arr.push(item.path);
+            })
+            this.$store.commit('getPath',arr)
+            window.sessionStorage.setItem('pathlist',arr)
             if(result.mate==400){
               this.$message.error(result.message)
               this.$router.push('/login')
               return
           }
           window.sessionStorage.setItem('name',result.token);
-    
-
-          this.$router.push('/home')
-                  
+          this.$router.push('/home')         
           this.$message.success('登录成功')
-          /* var arr = []
-          this.$router.options.routes.forEach(element => {
-              if(element.children){
-                element.children.forEach(item=>{
-                arr.push(item.path)
-                return arr
-                })
-              }
-          });
-          let sss = arr.findIndex(function(value){
-           return value == '/list' 
-          })
-          let aa = sss==-1?"meiyou":"you"
-          console.log(aa); */
-          
-          
           }
         })
       }

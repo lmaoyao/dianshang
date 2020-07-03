@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Info shouye='首页' guanli='管理员' liebiao='管理员列表'>
-      <el-button type="primary" @click="addDialogVisible = true">添加用户</el-button>
+    <Info shouye='首页' guanli='人员管理' liebiao='人员列表' flag='false'>
+      <el-button type="primary" @click="addDialogVisible = true" >添加用户</el-button>
       <el-table :data='userlist' style="width:100%" border stripe>
           <el-table-column label='#' type='index'></el-table-column>
           <el-table-column label='姓名' prop='name'></el-table-column>
@@ -9,6 +9,7 @@
           <el-table-column label='邮箱' prop='email'></el-table-column>
           <el-table-column label='年龄' prop='age'></el-table-column>
           <el-table-column label='工作性质' prop='resource'></el-table-column>
+          <el-table-column label='权限' prop='rolename'></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
               <el-button type="primary" icon="el-icon-edit" @click="Edit(scope.row.id)">修改</el-button>
@@ -146,9 +147,7 @@ export default {
   methods:{
     async getList(){
       let result =await this.$http.get('admin/list')
-      let data = result.data.data;
-      console.log(data);
-      
+      let data = result.data.data;  
       this.userlist = data; 
     },
     //修改
@@ -178,7 +177,7 @@ export default {
     },
     //重置
     resetField(){
-      this.$refs.addFromRef.resetFields()
+      this.$refs.addFromRef.resetFields();
     },
     //添加用户
    async addClick(){

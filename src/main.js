@@ -4,6 +4,7 @@ import router from './router/router'
 import Element from 'element-ui'
 import "./assets/css/global.css"
 import 'element-ui/lib/theme-chalk/index.css';
+import store from './store/index'
 Vue.config.productionTip = false
 Vue.use(Element);
 import axios from "axios";
@@ -25,6 +26,7 @@ Vue.filter('dateFormat',(originVal)=>{
 
 
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')
